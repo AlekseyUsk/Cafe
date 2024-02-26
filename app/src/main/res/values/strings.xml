@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Cafe</string>
+    <string name="password">Password</string>
+    <string name="user_name">Введите свое имя</string>
+    <string name="greetings">Привет!, $s ,что желаете?</string>
+    <string name="radioBtnTea">чай</string>
+    <string name="radioBtnCoffee">кофе</string>
+    <string name="textViewAddComponents">что добавить в %s?</string>
+    <string name="sugar">сахар</string>
+    <string name="milk">молоко</string>
+    <string name="lemon">лемон</string>
+    <string name="choose_drink_type">выберите тип напитка</string>
+
+    <string name="error_empty">Необходимо заполнить все поля</string>
+
+    <array name="type_tea">
+        <item>черный</item>
+        <item>зеленый</item>
+        <item>каркаде</item>
+        <item>чефир с зоны</item>
+        <item>помои</item>
+        <item>чай для бомжей</item>
+    </array>
+
+    <array name="type_coffee">
+        <item>крепкий</item>
+        <item>кстандарт</item>
+        <item>клатте</item>
+        <item>американо</item>
+        <item>крепкийрусиано</item>
+    </array>
+</resources>
