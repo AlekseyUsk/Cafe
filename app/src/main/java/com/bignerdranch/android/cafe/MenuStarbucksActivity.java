@@ -68,6 +68,8 @@ public class MenuStarbucksActivity extends AppCompatActivity {
         String resultDrinkUser = String.format(drinkUser, drink);
         textViewAddComponents.setText(resultDrinkUser);
         checkboxLemon.setVisibility(View.VISIBLE);
+        spinnerTea.setVisibility(View.VISIBLE);
+        spinnerCoffee.setVisibility(View.INVISIBLE);
     }
 
     private void onChoseUserCoffee() {
@@ -76,6 +78,8 @@ public class MenuStarbucksActivity extends AppCompatActivity {
         String resultDrinkUser = String.format(drinkUser, drink);
         textViewAddComponents.setText(resultDrinkUser);
         checkboxLemon.setVisibility(View.INVISIBLE);
+        spinnerTea.setVisibility(View.INVISIBLE);
+        spinnerCoffee.setVisibility(View.VISIBLE);
     }
 
     public static Intent newIntent(Context context, String userName) {
