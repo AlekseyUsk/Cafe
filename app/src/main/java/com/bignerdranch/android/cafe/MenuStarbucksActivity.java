@@ -3,6 +3,7 @@ package com.bignerdranch.android.cafe;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
@@ -66,6 +67,7 @@ public class MenuStarbucksActivity extends AppCompatActivity {
         String drinkUser = getString(R.string.textViewAddComponents);
         String resultDrinkUser = String.format(drinkUser, drink);
         textViewAddComponents.setText(resultDrinkUser);
+        checkboxLemon.setVisibility(View.VISIBLE);
     }
 
     private void onChoseUserCoffee() {
@@ -73,6 +75,7 @@ public class MenuStarbucksActivity extends AppCompatActivity {
         String drinkUser = getString(R.string.textViewAddComponents);
         String resultDrinkUser = String.format(drinkUser, drink);
         textViewAddComponents.setText(resultDrinkUser);
+        checkboxLemon.setVisibility(View.INVISIBLE);
     }
 
     public static Intent newIntent(Context context, String userName) {
