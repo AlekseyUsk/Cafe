@@ -18,7 +18,7 @@
             android:textStyle="italic" />
 
         <TextView
-            android:id="@+id/TextViewName"
+            android:id="@+id/textViewName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
@@ -33,11 +33,11 @@
             android:textStyle="italic" />
 
         <TextView
-            android:id="@+id/TextViewDrink"
+            android:id="@+id/textViewDrink"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:textSize="48sp"/>
+            android:textSize="48sp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -48,7 +48,7 @@
             android:textStyle="italic" />
 
         <TextView
-            android:id="@+id/TextViewTypeDrink"
+            android:id="@+id/textViewTypeDrink"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"

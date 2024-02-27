@@ -13,6 +13,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
+
 public class MenuStarbucksActivity extends AppCompatActivity {
 
     private TextView textViewGreetings;
@@ -32,7 +34,8 @@ public class MenuStarbucksActivity extends AppCompatActivity {
     private Button btnMakeOrder;
 
     private String drink;
-
+    private String userName;
+    private String drinkType;
 
     public static final String USER_NAME = "userName";
 
@@ -44,7 +47,39 @@ public class MenuStarbucksActivity extends AppCompatActivity {
         init();
         getMessageIntentSetupUserName();
         theUsersChoiceOfTheDrink();
+        onUserMadeOrder();
+    }
 
+    private void onUserMadeOrder() {
+        btnMakeOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ArrayList<String> additives = new ArrayList<>();
+                if (checkboxSugar.isChecked()) {
+                    additives.add(checkboxSugar.getText().toString());
+                }
+                if (checkboxMilk.isChecked()) {
+                    additives.add(checkboxMilk.getText().toString());
+                }
+                if (radioButtonTea.isChecked() & checkboxLemon.isChecked()) {
+                    additives.add(checkboxLemon.getText().toString());
+                }
+                additives.toString();
+
+                drinkType = "";
+                if (radioButtonTea.isChecked()) {
+                    drinkType = spinnerTea.getSelectedItem().toString();
+                } else if (radioButtonCoffee.isChecked()) {
+                    drinkType = spinnerCoffee.getSelectedItem().toString();
+                }
+                Intent intent = OrderScreenActivity.newIntent(MenuStarbucksActivity.this,
+                        userName,
+                        drink,
+                        drinkType,
+                        additives.toString());
+                startActivity(intent);
+            }
+        });
     }
 
     private void theUsersChoiceOfTheDrink() {
@@ -110,7 +145,7 @@ public class MenuStarbucksActivity extends AppCompatActivity {
 
     private void getMessageIntentSetupUserName() {
 
-        String userName = getIntent().getStringExtra(USER_NAME);
+        userName = getIntent().getStringExtra(USER_NAME);
         String greetings = getString(R.string.greetings);
         String result = String.format(greetings, userName);
         textViewGreetings.setText(result);
