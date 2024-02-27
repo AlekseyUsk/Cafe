@@ -30,6 +30,8 @@ public class MenuStarbucksActivity extends AppCompatActivity {
 
     private Button btnMakeOrder;
 
+    private String drink;
+
 
     public static final String USER_NAME = "userName";
 
@@ -40,22 +42,37 @@ public class MenuStarbucksActivity extends AppCompatActivity {
 
         init();
         getMessageIntentSetupUserName();
+        theUsersChoiceOfTheDrink();
 
+    }
+
+    private void theUsersChoiceOfTheDrink() {
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-
+            public void onCheckedChanged(RadioGroup radioGroup, int id) {
+                if (id == radioButtonTea.getId()) {
+                    onChoseUserTea();
+                } else if (id == radioButtonCoffee.getId()) {
+                    onChoseUserCoffee();
+                } else {
+                    Exception e;
+                }
             }
         });
-
     }
 
-    private void onChoseUserTea(){
-
+    private void onChoseUserTea() {
+        drink = getString(R.string.radioBtnTea);
+        String drinkUser = getString(R.string.textViewAddComponents);
+        String resultDrinkUser = String.format(drinkUser, drink);
+        textViewAddComponents.setText(resultDrinkUser);
     }
 
-    private void onChoseUserCoffee(){
-
+    private void onChoseUserCoffee() {
+        drink = getString(R.string.radioBtnCoffee);
+        String drinkUser = getString(R.string.textViewAddComponents);
+        String resultDrinkUser = String.format(drinkUser, drink);
+        textViewAddComponents.setText(resultDrinkUser);
     }
 
     public static Intent newIntent(Context context, String userName) {
